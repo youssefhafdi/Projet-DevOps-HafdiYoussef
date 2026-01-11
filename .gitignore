@@ -1,0 +1,23 @@
+# Build
+target/
+*.jar
+*.class
+
+# Maven
+pom.xml.tag
+pom.xml.versionsBackup
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
