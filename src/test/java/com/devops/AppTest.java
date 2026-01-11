@@ -48,4 +48,14 @@ public class AppTest {
         assertTrue(app.getMessage().contains("DevOps"));
         assertTrue(app.getMessage().contains("Bonjour"));
     }
+
+    @Test
+    public void testModule() {
+        assertEquals("DevOps", app.getModule());
+    }
+
+    @Test
+    public void testGroupe() {
+        assertEquals("5IIR", app.getGroupe());
+    }
 }
