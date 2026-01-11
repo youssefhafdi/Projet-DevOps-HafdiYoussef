@@ -52,3 +52,24 @@ java -jar target/devops-app-1.0-SNAPSHOT.jar
 4. Packaging
 5. Archivage
 6. Notification Slack
+
+---
+
+## Branches
+
+- `main` - Production
+- `dev` - Developpement
+
+---
+
+## Tests
+
+8 tests unitaires couvrent les fonctionnalites:
+- Message de bienvenue
+- Nom etudiant
+- Version
+- Annee
+- Ecole
+- Module
+- Groupe
+- Contenu du message
