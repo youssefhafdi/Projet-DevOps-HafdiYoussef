@@ -47,16 +47,14 @@ pipeline {
             }
         }
 
-        stage('Notify') {
+        stage('Notify Slack') {
             steps {
                 echo 'Notification Slack...'
-                withCredentials([string(credentialsId: 'slack-webhook', variable: 'SLACK_URL')]) {
-                    sh '''
-                        curl -X POST -H 'Content-type: application/json' \
-                        --data '{"text":"SUCCESS: PipeLine-HafdiYoussef Build #'"$BUILD_NUMBER"' OK!"}' \
-                        $SLACK_URL
-                    '''
-                }
+                slackSend(
+                    channel: '#devops-notifications',
+                    color: 'good',
+                    message: "SUCCESS: PipeLine-HafdiYoussef Build #${env.BUILD_NUMBER} termine avec succes!"
+                )
             }
         }
     }
@@ -67,6 +65,11 @@ pipeline {
         }
         failure {
             echo 'Build echoue!'
+            slackSend(
+                channel: '#devops-notifications',
+                color: 'danger',
+                message: "ECHEC: PipeLine-HafdiYoussef Build #${env.BUILD_NUMBER} a echoue!"
+            )
         }
         always {
             cleanWs()
