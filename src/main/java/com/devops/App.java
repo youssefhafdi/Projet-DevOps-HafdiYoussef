@@ -45,4 +45,12 @@ public class App {
     public String getEcole() {
         return "EMSI Tanger";
     }
+
+    public String getModule() {
+        return "DevOps";
+    }
+
+    public String getGroupe() {
+        return "5IIR";
+    }
 }
